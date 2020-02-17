@@ -1,9 +1,20 @@
 import { createStore } from 'redux'
 export default {
-  greenPage:createStore(counter),
+  greenPage:function(){
+    let tmp=createStore(counter);
+    console.log("init "+tmp.getState());
+    return tmp;
+  }(),
   redPage:createStore(counter),
 }
 
 function counter(state = 0,action) {
-  return state+1;
+  switch (action.type) {
+    case 'INC':
+      return state + 1
+    case 'DEC':
+      return state - 1
+    default:
+      return state
+  }
 }
