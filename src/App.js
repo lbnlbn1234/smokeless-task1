@@ -9,10 +9,9 @@ import {
   // useParams
 } from "react-router-dom";
 import Comic from "./components/Comic";
-// import axios from 'axios'
+
 function App() {
   return (
-    // <div id="xxx"></div>
     <Router>
       <Switch>
         <Route exact path="/">
@@ -35,7 +34,6 @@ function Green() {
       <div>
         This screen is shown <span> {store.greenPage.getState()}</span> times
       </div>
-
       <Link to="/red">
         <button>red</button>
       </Link>
@@ -51,7 +49,6 @@ function Red() {
       <div>
         This screen is shown <span> {store.greenPage.getState()}</span> times
       </div>
-
       <Link to="/">
         <button>green</button>
       </Link>
